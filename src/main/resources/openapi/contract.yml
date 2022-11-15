@@ -43,5 +43,7 @@ components:
       properties:
         timestamp:
           type: object
+        errors:
+          type: object
         details:
           type: string
