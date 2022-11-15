@@ -1,21 +1,17 @@
-# alticci-sequence-api
+# Alticci Sequence API
 Example of cache usage in recursive processing.
 
+### Technologies used
+Java 11 (11.0.12-open), Maven (3.6.3) Spring Boot(2.7.5), OpenAPI 3, Swagger-UI and Docker.
 
-# Getting Started
+## Running the application
+OS X & Linux & Windows:
 
-### Reference Documentation
-For further reference, please consider the following sections:
+```sh
+mvn clean install
+docker build -t <TAG_NAME> .
+docker run -p 8080:8080 <TAG_NAME>:latest
+```
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.5/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.5/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.5/reference/htmlsingle/#web)
-
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-
+## API Documentation
+API documentation can be accessed from the local page (Swagger UI): [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)

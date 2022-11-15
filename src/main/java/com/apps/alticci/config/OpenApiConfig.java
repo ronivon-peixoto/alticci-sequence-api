@@ -1,6 +1,5 @@
 package com.apps.alticci.config;
 
-import com.apps.alticci.config.properties.AppInfo;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;

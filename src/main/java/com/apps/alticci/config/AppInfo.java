@@ -1,4 +1,4 @@
-package com.apps.alticci.config.properties;
+package com.apps.alticci.config;
 
 import lombok.Getter;
 import lombok.Setter;

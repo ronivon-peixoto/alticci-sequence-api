@@ -29,15 +29,6 @@ public class AppExceptionHandler {
                 .details(INTERNAL_SERVER_ERROR_MESSAGE);
     }
 
-    @ExceptionHandler(BusinessException.class)
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    public final ApiErrorsDto handlerBusinessException(Exception ex, WebRequest request) {
-        return new ApiErrorsDto()
-                .timestamp(new Date())
-                .errors(List.of())
-                .details(ex.getMessage());
-    }
-
     @ExceptionHandler(ConstraintViolationException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ApiErrorsDto handleConstraintViolation(ConstraintViolationException ex, WebRequest request) {
