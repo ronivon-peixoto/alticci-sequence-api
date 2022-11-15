@@ -1,0 +1,27 @@
+server:
+  application:
+    name: alticci-sequence-api
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    info:
+      title: 'Alticci Sequence API'
+      description: '@project.description@'
+      version: '@project.version@'
+
+spring-doc:
+  api-docs:
+    path: /v3/api-docs
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test

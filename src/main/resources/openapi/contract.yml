@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: 'Alticci Sequence API'
+  description: 'Example of cache usage in recursive processing.'
+  version: 1.0.0
+tags:
+  - name: alticci-controller
+paths:
+  /alticci/{index}:
+    get:
+      tags:
+        - alticci-controller
+      summary: 'Gets the value of the Alticci sequence by the given index.'
+      operationId: getAlticciValueByIndex
+      parameters:
+        - name: index
+          in: path
+          description: "Index of the value to be returned from the Alticci sequence."
+          required: true
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int64
+        400:
+          description: 'Bad Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrors'
+
+components:
+  schemas:
+    ApiErrors:
+      type: object
+      properties:
+        timestamp:
+          type: object
+        errors:
+          type: object
+        details:
+          type: string
