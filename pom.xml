@@ -16,6 +16,8 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<springdoc-openapi-version>1.6.11</springdoc-openapi-version>
 		<swagger-codegen-v3-plugin-version>3.0.33</swagger-codegen-v3-plugin-version>
 	</properties>
