@@ -2,6 +2,6 @@ package com.apps.alticci.service;
 
 public interface AlticciService {
 
-    Long alticci(Integer index);
+    Long calculate(Integer index);
 
 }

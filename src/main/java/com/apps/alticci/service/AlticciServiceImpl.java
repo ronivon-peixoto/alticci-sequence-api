@@ -6,6 +6,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import static java.util.Objects.isNull;
+
 @Service
 @Slf4j
 public class AlticciServiceImpl implements AlticciService {
@@ -16,7 +18,10 @@ public class AlticciServiceImpl implements AlticciService {
 
     @Override
     @Cacheable("alticci")
-    public Long alticci(Integer index) {
+    public Long calculate(Integer index) {
+        if (isNull(index) || index < 0) {
+            throw new IllegalArgumentException("Must be greater than or equal to 0");
+        }
         log.info("call of alticci with index {}", index);
 
         if (index == 0) {
@@ -24,7 +29,7 @@ public class AlticciServiceImpl implements AlticciService {
         } else if (index < 3) {
             return 1L;
         } else {
-            return self.alticci(index - 3) + self.alticci(index - 2);
+            return self.calculate(index - 3) + self.calculate(index - 2);
         }
     }
 

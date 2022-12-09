@@ -14,6 +14,6 @@ public class AlticciController implements AlticciApi {
 
     @Override
     public ResponseEntity<Long> getAlticciValueByIndex(Integer index) {
-        return ResponseEntity.ok(alticciService.alticci(index));
+        return ResponseEntity.ok(alticciService.calculate(index));
     }
 }
